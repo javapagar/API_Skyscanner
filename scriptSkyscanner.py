@@ -1,6 +1,6 @@
 import requests
 
-def getJsonSkyScanner(origen, destino, fecha):
+def getJsonSkyScanner(headers,origen, destino, fecha):
     country = "ES"
     currency = "EUR"
     locale = "es-ES"
@@ -11,12 +11,8 @@ def getJsonSkyScanner(origen, destino, fecha):
 
     querystring = {"inboundpartialdate": "2021-03-28"}
 
-    headers = {
-        'x-rapidapi-key': "61982e9993msh5a7e13221d6bc82p183294jsn4ab0ad0313e1",
-        'x-rapidapi-host': "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"
-    }
-
     return requests.request("GET", url, headers=headers, params=querystring).json()
+
 def createTable(json):
 
     precios = json['Quotes']

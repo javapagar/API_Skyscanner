@@ -1,4 +1,5 @@
 import requests
+import headersJson as hj
 
 def getJsonSkyScanner(headers,origen, destino, fecha):
     country = "ES"
@@ -38,6 +39,5 @@ destino =["MVD-sky", "anywhere"]
 fecha = "2021-02-28"
 
 
-json = getJsonSkyScanner(origen, destino[0], fecha)
-
-print(json)
+json = getJsonSkyScanner(hj.headers, origen, destino[0], fecha)
+createTable(json)

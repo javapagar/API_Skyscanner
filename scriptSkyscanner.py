@@ -34,10 +34,10 @@ def createTable(json):
         print(companiaName, origen, destino, fecha, total)
 
 
+#Script que se ejecuta
 origen = "MAD-sky"
 destino =["MVD-sky", "anywhere"]
 fecha = "2021-02-28"
-
 
 json = getJsonSkyScanner(hj.headers, origen, destino[0], fecha)
 createTable(json)
